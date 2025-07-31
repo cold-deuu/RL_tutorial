@@ -76,8 +76,6 @@ class Agent:
         self.actor_lr = 0.0001
         self.critic_lr = 0.001
 
-
-        # 이건 print 해봐야겠음
         self.state_dim = env.observation_space.shape[0]
         self.action_dim = env.action_space.shape[0]
         self.action_bound = env.action_space.high[0]
