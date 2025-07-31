@@ -4,7 +4,7 @@ Actor Critic Algorithm
 
 ## 🌀 Rollout Demo
 
-![Rollout Demo](assets/rl_a2c_pendulum.gif)
+![Rollout Demo](assets/a2c_pendulum.gif)
 
 
 ## Algorithm
