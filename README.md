@@ -47,7 +47,7 @@ Train the Actor and Critic networks simultaneously.
 
 ### Concept
 
-정책을 $\theta$ 로 파라미터화 한 네트워크로 정의한다. 이때 최적의 $theta$ 를 찾기 위해서 Loss Function 을 정의하고, 이를 최적화 하기 위한 학습을 진행한다.
+정책을 $\theta$ 로 파라미터화 한 네트워크로 정의한다. 이때 최적의 $\theta$ 를 찾기 위해서 Loss Function 을 정의하고, 이를 최적화 하기 위한 학습을 진행한다.
 
 이때 Loss Function은 Policy 와 Action Value(행동가치, Q)로 구성된다. 그러나 이 Loss Function을 그대로 사용하면 행동가치의 변화에 Loss 가 매우 민감해져 학습에 불안정성을 야기할 수 있다. 따라서 Base Line을 빼주어 학습 안정성을 높인다.
 
