@@ -61,13 +61,13 @@ Train the Actor and Critic networks simultaneously.
 ---
 ### 🎯 Policy Gradient Loss (Without Baseline)
 
-L_policy = - E[ log(pi_theta(a|s)) * Q(s, a) ]
+$ \mathcal{L}_{\text{policy}} = - \mathbb{E}_{s,a} \left[ \log \pi_\theta(a|s) \cdot Q^\pi(s,a) \right] $
 
 ---
 
 ### 🧘‍♂️ Policy Gradient Loss (With Baseline)
 
-L_actor = - E[ log(pi_theta(a|s)) * (Q(s, a) - b(s)) ]
+$ \mathcal{L}_{\text{actor}} = - \mathbb{E}_{s,a} \left[ \log \pi_\theta(a|s) \cdot ( Q^\pi(s,a) - b(s) ) \right] $
 
 ※ 보통 baseline b(s) 는 상태 가치 함수 V(s) 를 사용합니다.
 
@@ -75,14 +75,14 @@ L_actor = - E[ log(pi_theta(a|s)) * (Q(s, a) - b(s)) ]
 
 ### 💡 Advantage-based Policy Loss
 
-A(s, a) = Q(s, a) - V(s)
+$ A^\pi(s,a) = Q^\pi(s,a) - V^\pi(s) $
 
-L_actor = - E[ log(pi_theta(a|s)) * A(s, a) ]
+$ \mathcal{L}_{\text{actor}} = - \mathbb{E}_{s,a} \left[ \log \pi_\theta(a|s) \cdot A^\pi(s,a) \right] $
 
 ---
 
 ### 🧠 Critic Loss (State Value Function)
 
-L_critic = ( V_phi(s) - R )^2
+$ \mathcal{L}_{\text{critic}} = \left( V_\phi(s) - R \right)^2 $
 
-R = r + gamma * V_phi(s')
+$ R = r + \gamma V_\phi(s') $
