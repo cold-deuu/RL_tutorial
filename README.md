@@ -54,37 +54,3 @@ Train the Actor and Critic networks simultaneously.
 이때 Base Line 은 보통 State Value 를 사용하고, 적절한 근사를 거치면 Policy 의 Loss Function이 State Value Function 과 Policy 의 조합으로 나타난다.
 
 이때 State Value Function 또한 $\phi$ 로 파라미터화한 네트워크로 정의하고, 이를 Critic Network라고 하면, Critic Network 로 State Value 를 계산하고, 이를 Actor Network 를 학습하는데 재사용하며 최적의 Policy Network 를 찾을 수 있다.
-
-## Summary
-
-### 📚 Loss Functions
----
-### 🎯 Policy Gradient Loss (Without Baseline)
-
-$$
-\mathcal{L}_{\text{policy}} = - \mathbb{E}_{s,a} \left[ \log \pi_\theta(a|s) \cdot Q^\pi(s,a) \right]
-$$
-
----
-
-### 🧘‍♂️ Policy Gradient Loss (With Baseline)
-
-$\mathcal{L}_a = - \mathbb{E}_{s,a} \left[ \log \pi_\theta(a|s) \cdot ( Q^\pi(s,a) - b(s) ) \right]$
-
-※ 보통 baseline b(s) 는 상태 가치 함수 V(s) 를 사용합니다.
-
----
-
-### 💡 Advantage-based Policy Loss
-
-$A^\pi(s,a) = Q^\pi(s,a) - V^\pi(s)$
-
-$\mathcal{L}_{\text{actor}} = - \mathbb{E}_{s,a} \left[ \log \pi_\theta(a|s) \cdot A^\pi(s,a) \right]$
-
----
-
-### 🧠 Critic Loss (State Value Function)
-
-$\mathcal{L}_{\text{critic}} = \left( V_\phi(s) - R \right)^2$
-
-$R = r + \gamma V_\phi(s')$
