@@ -1,6 +1,12 @@
 # A2C
 Actor Critic Algorithm
 
+
+## 🌀 Rollout Demo
+
+![Rollout Demo](assets/rollout.gif)
+
+
 ## Algorithm
 
 Train the Actor and Critic networks simultaneously.
