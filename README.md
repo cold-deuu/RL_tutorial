@@ -53,4 +53,4 @@ Train the Actor and Critic networks simultaneously.
 
 이때 Base Line 은 보통 State Value 를 사용하고, 적절한 근사를 거치면 Policy 의 Loss Function이 State Value Function 과 Policy 의 조합으로 나타난다.
 
-이때 State Value Function 또한 $\Phi$ 로 파라미터화한 네트워크로 정의하고, 이를 Critic Network라고 하면, Critic Network 로 State Value 를 계산하고, 이를 Actor Network 를 학습하는데 재사용하며 최적의 Policy Network 를 찾을 수 있다.
+이때 State Value Function 또한 $\phi$ 로 파라미터화한 네트워크로 정의하고, 이를 Critic Network라고 하면, Critic Network 로 State Value 를 계산하고, 이를 Actor Network 를 학습하는데 재사용하며 최적의 Policy Network 를 찾을 수 있다.
