@@ -61,7 +61,9 @@ Train the Actor and Critic networks simultaneously.
 ---
 ### 🎯 Policy Gradient Loss (Without Baseline)
 
-$\mathcal{L}_{\text{policy}} = - \mathbb{E}_{s,a} \left[ \log \pi_\theta(a|s) \cdot Q^\pi(s,a) \right]$
+$$
+\mathcal{L}_{\text{policy}} = - \mathbb{E}_{s,a} \left[ \log \pi_\theta(a|s) \cdot Q^\pi(s,a) \right]
+$$
 
 ---
 
