@@ -69,7 +69,7 @@ $$
 
 ### 🧘‍♂️ Policy Gradient Loss (With Baseline)
 
-$\mathcal{L}_{\text{actor}} = - \mathbb{E}_{s,a} \left[ \log \pi_\theta(a|s) \cdot ( Q^\pi(s,a) - b(s) ) \right]$
+$\mathcal{L}_{actor} = - \mathbb{E}_{s,a} \left[ \log \pi_\theta(a|s) \cdot ( Q^\pi(s,a) - b(s) ) \right]$
 
 ※ 보통 baseline b(s) 는 상태 가치 함수 V(s) 를 사용합니다.
 
