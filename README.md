@@ -35,17 +35,17 @@ python3 a2c_agent_test.py
 
 ---
 
-## A2C
+# A2C
 Actor Critic Algorithm
 
-### Algorithm
+## Algorithm
 
 Train the Actor and Critic networks simultaneously.
 
 - Actor Network : A policy network that outputs the mean and standard deviation of the policy's probability distribution.
 - Critic Network : A value network that estimates the state value function and is used to compute the loss for training the actor.
 
-### Concept
+## Concept
 
 정책을 $\theta$ 로 파라미터화 한 네트워크로 정의한다. 이때 최적의 $\theta$ 를 찾기 위해서 Loss Function 을 정의하고, 이를 최적화 하기 위한 학습을 진행한다.
 
@@ -54,3 +54,35 @@ Train the Actor and Critic networks simultaneously.
 이때 Base Line 은 보통 State Value 를 사용하고, 적절한 근사를 거치면 Policy 의 Loss Function이 State Value Function 과 Policy 의 조합으로 나타난다.
 
 이때 State Value Function 또한 $\phi$ 로 파라미터화한 네트워크로 정의하고, 이를 Critic Network라고 하면, Critic Network 로 State Value 를 계산하고, 이를 Actor Network 를 학습하는데 재사용하며 최적의 Policy Network 를 찾을 수 있다.
+
+## Summary
+
+### 📚 Loss Functions
+---
+### 🎯 Policy Gradient Loss (Without Baseline)
+
+L_policy = - E[ log(pi_theta(a|s)) * Q(s, a) ]
+
+---
+
+### 🧘‍♂️ Policy Gradient Loss (With Baseline)
+
+L_actor = - E[ log(pi_theta(a|s)) * (Q(s, a) - b(s)) ]
+
+※ 보통 baseline b(s) 는 상태 가치 함수 V(s) 를 사용합니다.
+
+---
+
+### 💡 Advantage-based Policy Loss
+
+A(s, a) = Q(s, a) - V(s)
+
+L_actor = - E[ log(pi_theta(a|s)) * A(s, a) ]
+
+---
+
+### 🧠 Critic Loss (State Value Function)
+
+L_critic = ( V_phi(s) - R )^2
+
+R = r + gamma * V_phi(s')
